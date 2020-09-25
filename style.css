@@ -1,20 +1,20 @@
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
 
 }
 #kotak {
     border: solid 1px #ccc;
-    width: 500px;
-    height: 500px;
+    width: 375px;
+    height: 375px;
 }
 #tombol {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     float: left;
 }
 .depan {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background-color: blue;
     position: absolute;
     transform: perspective(500px)rotateY(0deg);
@@ -23,14 +23,14 @@ h1, h2 {
     transition: transform 1s linear 0s;
 }
 .belakang {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     position: absolute;
     transform: perspective(500px)rotateY(180deg);
     border: solid 1px blue;
     backface-visibility: hidden;
     transition: transform 1s linear 0s;
-    font-size: 75px;
+    font-size: 60px;
 }
 span {
     font-size: 30px;
