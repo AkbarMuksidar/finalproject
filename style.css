@@ -1,0 +1,37 @@
+h1, h2 {
+    text-align: center;
+
+}
+#kotak {
+    border: solid 1px #ccc;
+    width: 500px;
+    height: 500px;
+}
+#tombol {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.depan {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    transform: perspective(500px)rotateY(0deg);
+    border: solid 1px white;
+    backface-visibility: hidden;
+    transition: transform 1s linear 0s;
+}
+.belakang {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: perspective(500px)rotateY(180deg);
+    border: solid 1px blue;
+    backface-visibility: hidden;
+    transition: transform 1s linear 0s;
+    font-size: 75px;
+}
+span {
+    font-size: 30px;
+}
