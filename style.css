@@ -2,6 +2,13 @@ h1, h2, h3 {
     text-align: center;
 
 }
+#btnReset {
+    border: solid 1px black;
+    width: 40px;
+    height: 20px;
+    position: absolute;
+}
+
 #kotak {
     border: solid 1px #ccc;
     width: 375px;

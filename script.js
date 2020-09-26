@@ -1,5 +1,7 @@
 let pemain = "X";
 let jmlKlik = 1;
+
+
 function kliktombol(noBtn) {
 	document.getElementById("btn" + noBtn + "D").style.transform = "perspective(500px)rotateY(-180deg)";
 	document.getElementById("btn" + noBtn + "B").style.transform = "perspective(500px)rotateY(0deg)";
@@ -8,33 +10,32 @@ function kliktombol(noBtn) {
 	document.getElementById("btn" + noBtn + "B").disabled = "disabled"
 	
 	if (pemain === "X") {
-			document.getElementById("btn" + noBtn + "B").style.color = "red";
-			cekPemenang ();
-			pemain = "O";
-			jmlKlik +=1
+		document.getElementById("btn" + noBtn + "B").style.color = "red";
+		cekPemenang ();
+		pemain = "O";
+		jmlKlik +=1
 	} else {
-			document.getElementById("btn" + noBtn + "B").style.color = "green";
-			cekPemenang ();
-			pemain = "X";
-			jmlKlik +=1
+		document.getElementById("btn" + noBtn + "B").style.color = "green";
+		cekPemenang ();
+		pemain = "X";
+		jmlKlik +=1
 	}
-
+	
 	if (jmlKlik === 26) {
-	document.getElementById("cek").innerHTML = "Hasil Permainan";
+		document.getElementById("cek").innerHTML = "Hasil Permainan";
 	} else {
-	document.getElementById("cek").innerHTML = "Giliran Pemain: " + pemain;
+		document.getElementById("cek").innerHTML = "Giliran Pemain: " + pemain;
 	}
 }
-let panjang = document.getElementsByClassName('depan');
 function cekPemenang() {
 	let hitung = 0;
-	for (let i = 4; i < panjang.length-4; i=i+5) {
+	for (let i = 4; i < 21; i=i+5) {
 			if (document.getElementById("btn" + i + "B").Value === pemain && document.getElementById("btn" + (i+1) + "B").Value === pemain && document.getElementById("btn" + (i+2) + "B").Value === pemain ) {
 					hitung -= 1
 			}
 	}
 
-	for (let i = 5; i < panjang.length-5; i=i+5) {
+	for (let i = 5; i < 20; i=i+5) {
 			if (document.getElementById("btn" + i + "B").Value === pemain && document.getElementById("btn" + (i+1) + "B").Value === pemain && document.getElementById("btn" + (i+2) + "B").Value === pemain ) {
 					hitung -= 1
 			}
@@ -76,32 +77,17 @@ function cekPemenang() {
 			}
 	}
 
-	for (let i = 1; i < panjang.length-1; i++) {
+	for (let i = 1; i < 24; i++) {
 			if (document.getElementById("btn" + i + "B").Value === pemain && document.getElementById("btn" + (i+1) + "B").Value === pemain && document.getElementById("btn" + (i+2) + "B").Value === pemain) {
 					hitung += 1
 			}
 	}
-	let jmlMenangX = 0;
-	let jmlMenangO = 0;
+
 	if (pemain === "X") {
-			document.getElementById("skorX").innerHTML = "Skor " + pemain + " = " + hitung;
-			jmlMenangX = hitung
-
-	} else {
-			document.getElementById("skorO").innerHTML = " - VS - "+ hitung + " = " + pemain + " Skor";
-			jmlMenangO = hitung
-
+		document.getElementById("skorX").innerHTML = "Skor " + pemain + " = " + hitung;
+	} else if (pemain === "O")  {
+		document.getElementById("skorO").innerHTML = " -- VS -- "+ hitung + " = Skor " + pemain;
 	}
 
-	if (jmlMenangX > jmlMenangO && jmlKlik === 25 ) {
-			document.getElementById("jmlKlik").innerHTML = "Pemenangnya Adalah Pemain X"
-	} else if (jmlMenangX < jmlMenangO && jmlKlik === 25)
-			document.getElementById("jmlKlik").innerHTML = "Pemenangnya Adalah Pemain Y"
 	
-	
-
-
-}
-function menang() {
-			
 }
